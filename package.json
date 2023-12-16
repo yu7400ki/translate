@@ -1,0 +1,16 @@
+{
+  "name": "translate",
+  "private": true,
+  "workspaces": [
+    "web",
+    "marian/pkg"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
