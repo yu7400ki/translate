@@ -1,4 +1,7 @@
-#![allow(dead_code)]
+use std::fmt::{Debug, Display};
+use wasm_bindgen::prelude::*;
+
+#[allow(dead_code)]
 pub fn set_panic_hook() {
     // When the `console_error_panic_hook` feature is enabled, we can call the
     // `set_panic_hook` function at least once during initialization, and then
@@ -8,4 +11,15 @@ pub fn set_panic_hook() {
     // https://github.com/rustwasm/console_error_panic_hook#readme
     #[cfg(feature = "console_error_panic_hook")]
     console_error_panic_hook::set_once();
+}
+
+pub struct JSErr {}
+
+impl JSErr {
+    pub fn msg<T>(e: T) -> JsValue
+    where
+        T: Display + Debug + Send + Sync + 'static,
+    {
+        JsValue::from_str(&format!("{}", e))
+    }
 }
