@@ -13,7 +13,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "marian": "workspace:*"
+    "marian": "workspace:*",
+    "comlink": "^4.4.1"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.22.1",
